@@ -24,7 +24,8 @@ angular.module("basket").controller("basketController", ["$scope", "loginService
             };
             console.log(myOrder);
             //basketService.sendOrder(myOrder);
-            $scope.yo = "Thank you for shopping with CMS!"
+            $scope.yo = "Thank you for shopping with CMS!";
+            basketService.emptyCart();
         }
         else{
             $scope.yo = "Please log in to place an order";
@@ -37,7 +38,16 @@ angular.module("basket").controller("basketController", ["$scope", "loginService
 
     $scope.productSelected = function (id) {
         $location.path("/product/" + id);
-    }
+    };
+
+    $scope.$watch(function () {
+        return basketService.myBasket();
+
+    }, function (newValue, oldValue) {
+        if (newValue !== oldValue){
+            $scope.myBasket = basketService.myBasket();
+        }
+    })
 
 
 

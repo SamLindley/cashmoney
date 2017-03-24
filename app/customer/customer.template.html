@@ -1,61 +1,74 @@
 
-<div>
-    <div>
-        <table class="table">
-            <tbody>
-            <tr></tr>
-            <tr>
-                <td>Account Details for:</td>
-                <td>{{currentUser().firstName}} {{currentUser().lastName}}</td>
-            </tr>
+<div class="container">
+    <div class="row">
+
+    </div><!-- /row -->
+    <div class="row">
+        <div class="col-sm-1">
+
+        </div><!-- /col-sm-1 -->
+
+        <div class="col-sm-5">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>Details</strong> <span class="text-muted"></span>
+                </div>
+                <div class="panel-body">
+
+                    <table>
+                        <tr>
+                            <td>Name: </td>
+                            <td>{{currentUser.firstName}} {{currentUser.lastName}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email: </td>
+                            <td>{{currentUser.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Phone: </td>
+                            <td>{{currentUser.phone}}</td>
+                        </tr>
+                        <tr>
+                            <td>Address: </td>
+                            <td>{{currentUser.address}}</td>
+                        </tr>
+                        <tr>
+                            <td>Postcode</td>
+                            <td>{{currentUser.postalCode}}</td>
+                        </tr>
+                    </table>
+                    <div>{{currentUser.firstName}} {{currentUser.lastName}}</div>
+                </div><!-- /panel-body -->
+                <a class="btn btn-primary btn-lg login-button" href="/editDetails">Edit Info</a>
+            </div><!-- /panel panel-default -->
+        </div><!-- /col-sm-5 -->
 
 
-            <tr>
-                <td scope="row">Email</td>
-                <td>{{currentUser().email}}</td>
-            </tr>
-            <tr>
-                <td scope="row">Email</td>
-                <td>{{currentUser().phone}}</td>
-            </tr>
-            <tr>
-                <td scope="row">Email</td>
-                <td>{{currentUser().address}}</td>
-            </tr>
-            <tr>
-                <td scope="row">Email</td>
-                <td>{{currentUser().email}}</td>
-            </tr>
-            <tr>
-                <td scope="row">Email</td>
-                <td>{{currentUser().email}}</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <a href="/editDetails">Edit Info</a>
-</div>
-<br>
-<br>
-<br>
-<br>
-<h3>Order History</h3>
-<div>
-    <div class="col-xs-8 col-md-1">
+        <div class="col-sm-0">
 
-        <table class="table">
-            <tr ng-repeat="order in orders" href="#" class="thumbnail" ng-click="orderClicked(order.id)">
-                <td>{{order.dateTime | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
-                <td>{{order.total}}</td>
-            </tr>
-            <tr>
-                <td>hey</td>
-                <td>{{total}}</td>
-            </tr>
-        </table>
-        <!--<a ng-repeat="order in orders" href="#" class="thumbnail" ng-click="productClicked(product.id)">-->
+        </div><!-- /col-sm-1 -->
+
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>Past Orders</strong> <span class="text-muted">(Click an order for detailed view)</span>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <a href="#"><tr ng-repeat="order in orders" href="#" class="thumbnail" ng-click="orderClicked(order.id)">
+                            <td>{{order.dateTime | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+                            <td>{{order.total}}</td>
+                        </tr></a>
+                        <tr>
+                            <td>TOTAL:</td>
+                            <td>{{total}}</td>
+                        </tr>
+                    </table>
+                </div><!-- /panel-body -->
+            </div><!-- /panel panel-default -->
+        </div><!-- /col-sm-5 -->
+    </div><!-- /row -->
+
+</div><!-- /container -->
 
 
-        </a>
-    </div>
-</div>

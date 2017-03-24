@@ -36,6 +36,9 @@ angular.module("basket").factory("basketService", ["$http", function ($http) {
         },
         sendOrder: function (order) {
             return $http.post("http://nackbutik.azurewebsites.net/api/order", order);
+        },
+        emptyCart: function () {
+            myBasket = [];
         }
     }
 }]);

@@ -36,32 +36,16 @@
     <script src="app/customer/customer.controller.js"></script>
     <script src="app/customer/customer.service.js"></script>
     <script src="app/customer/customer.order-details.controller.js"></script>
+    <script src="app/customer/customer.component.js"></script>
+
+    <script src="app/navbar/navbar.module.js"></script>
+    <script src="app/navbar/navbar.component.js"></script>
+
 
 
 </head>
+
 <body ng-app="app">
-    <div class="container" ng-controller="loginController">
-        <div class="header clearfix">
-            <nav class="ng-show">
-                <ul class="nav nav-pills pull-right">
-                    <li><a href="/">CASH MONEY INC.</a></li>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/basket">Basket</a></li>
-                    <li><a  ng-hide="isLoggedIn()" href="/login">Log In</a></li>
-                    <li ><a ng-hide="!isLoggedIn()" ng-click="logOut()" href="/">Log Out</a></li>
-                    <li><a ng-hide="isLoggedIn()" href="/register">Register</a> </li>
-                    <li><a ng-hide="!isLoggedIn()">Hello {{currentUser().firstName}}!</a> </li>
-                    <li><a ng-hide="!isLoggedIn()" href="/details">Account Details</a> </li>
-                    <!--<li><a href="#" ng-click="showLoginStatus()">Status</a> </li>-->
-
-                </ul>
-            </nav>
-        </div>
-    </div>
-
-
-    <div ng-view></div>
-
-
+    <navbar-component></navbar-component>
 </body>
 </html>

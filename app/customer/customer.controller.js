@@ -3,6 +3,8 @@ angular.module("customer").controller("customerController", [ "$scope","loginSer
 
         var currentUser = loginService.currentUser();
 
+        $scope.currentUser = currentUser;
+
         customerService.allOrders(currentUser.customerId).then(function (response) {
             var allOrders = response.data;
             var totalOfAllOrders = 0;

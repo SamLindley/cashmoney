@@ -1,3 +1,4 @@
+<!--
 <div class="row">
     <h1>
         <form>
@@ -14,5 +15,52 @@
             <img src= {{product.imageUrl}} alt="...">
 
         </a>
+    </div>
+</div>
+-->
+
+
+
+
+
+
+
+
+
+
+
+<div class="myContainer">
+
+    <h1>
+        <form>
+            <input type="text" ng-model="query" placeholder="Search">
+            in
+            <select ng-model="categorySelected" class="input-small" ng-options="category.name for category in categories">
+                <option value="">All</option>
+            </select>
+        </form>
+
+
+
+    </h1>
+    <div class="row">
+        <!-- BEGIN PRODUCTS -->
+        <div ng-repeat="product in products | filter: {categoryId: categorySelected.id, name: query }" class="col-md-3 col-sm-10">
+    		<span class="thumbnail text-center" ng-click="productClicked(product.id)">
+      			<img src={{product.imageUrl}} alt="...">
+      			<h4 class="text-danger">{{product.name}}</h4>
+
+                <p>{{product.price}}</p>
+    		</span>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- END PRODUCTS -->
     </div>
 </div>

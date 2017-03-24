@@ -21,10 +21,13 @@ angular.module("app").config(["$routeProvider", "$locationProvider", function ($
         templateUrl: "app/login/register.template.html",
         controller: "registerController"
     })
-    .when("/details", {
+    /*.when("/details", {
         templateUrl: "app/customer/customer.template.html",
         controller: "customerController"
-    })
+    })*/
+        .when("/details",{
+            template: "<customer-component></customer-component>"
+        })
     .when("/editDetails", {
         templateUrl: "app/customer/customerEdit.template.html",
         controller: "loginController"
