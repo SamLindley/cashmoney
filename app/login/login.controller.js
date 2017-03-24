@@ -95,8 +95,6 @@ angular.module("login").controller("loginController", ["$scope", "$location", "$
         console.log(customerUpdate);
     };
 
-    $scope.orderClicked = function (id) {
 
-    }
 
 }]);

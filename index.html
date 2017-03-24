@@ -35,6 +35,7 @@
     <script src="app/customer/customer.module.js"></script>
     <script src="app/customer/customer.controller.js"></script>
     <script src="app/customer/customer.service.js"></script>
+    <script src="app/customer/customer.order-details.controller.js"></script>
 
 
 </head>
@@ -47,7 +48,7 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/basket">Basket</a></li>
                     <li><a  ng-hide="isLoggedIn()" href="/login">Log In</a></li>
-                    <li ><a ng-hide="!isLoggedIn()" ng-click="logOut()" href="">Log Out</a></li>
+                    <li ><a ng-hide="!isLoggedIn()" ng-click="logOut()" href="/">Log Out</a></li>
                     <li><a ng-hide="isLoggedIn()" href="/register">Register</a> </li>
                     <li><a ng-hide="!isLoggedIn()">Hello {{currentUser().firstName}}!</a> </li>
                     <li><a ng-hide="!isLoggedIn()" href="/details">Account Details</a> </li>

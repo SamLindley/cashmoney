@@ -1,0 +1,32 @@
+<div ng-repeat="product in products" class="container">
+    <div class="row">
+        <div class="col-xs-4 item-photo">
+            <img style="max-width:100%;" src={{product.imageUrl}} />
+        </div>
+        <div class="col-xs-5" style="border:0px solid gray">
+
+            <h3>{{product.name}}</h3>
+
+            <h6 class="title-price"><small>PRICE PER UNIT</small></h6>
+            <h3 style="margin-top:0px;">{{product.price}} kr</h3>
+            <h6 class="title-price"><small>TOTAL BOUGHT</small></h6>
+            <h3 style="margin-top:0px;">{{product.quantity}}</h3>
+
+
+
+            <div class="section" style="padding-bottom:5px;">
+                <h6 class="title-attr"><small>Total Cost</small></h6>
+                <div>
+                    <h3 class="attr2">{{product.price * product.quantity}}</h3>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-xs-9">
+
+        </div>
+    </div>
+</div>
+</div>

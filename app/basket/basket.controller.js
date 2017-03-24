@@ -23,7 +23,8 @@ angular.module("basket").controller("basketController", ["$scope", "loginService
                 products: myItems
             };
             console.log(myOrder);
-            basketService.sendOrder(myOrder);
+            //basketService.sendOrder(myOrder);
+            $scope.yo = "Thank you for shopping with CMS!"
         }
         else{
             $scope.yo = "Please log in to place an order";

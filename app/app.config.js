@@ -23,14 +23,14 @@ angular.module("app").config(["$routeProvider", "$locationProvider", function ($
     })
     .when("/details", {
         templateUrl: "app/customer/customer.template.html",
-        controller: "loginController"
+        controller: "customerController"
     })
     .when("/editDetails", {
         templateUrl: "app/customer/customerEdit.template.html",
         controller: "loginController"
     })
     .when("/order/:orderId", {
-        templateUrl: "app/customer/customer-details.template.html",
+        templateUrl: "app/customer/customer.order-details.template.html",
         controller: "orderDetailsController"
     })
     .otherwise("/");
