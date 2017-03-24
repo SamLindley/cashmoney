@@ -23,7 +23,7 @@ angular.module("customer").controller("orderDetailsController", [ "$scope","logi
             })
 
 
-        })
+        });
         $scope.products = products;
 
 
