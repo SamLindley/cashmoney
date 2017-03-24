@@ -13,7 +13,7 @@ angular.module("login").controller("registerController", ["$scope", "$location",
             city: $scope.city
         };
         loginService.register(customer).then(function () {
-            $location.path = "/login";
+            $location.path("/login");
         });
 
     }

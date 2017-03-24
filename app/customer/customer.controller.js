@@ -29,5 +29,34 @@ angular.module("customer").controller("customerController", [ "$scope","loginSer
 
         $scope.orderClicked = function (id) {
             $location.path("/order/" + id)
-        }
+        };
+
+        $scope.update = function () {
+            var logInCredentials = {
+                "email": $scope.email,
+                "password": $scope.password
+            };
+            var customerUpdate = {
+                firstName: $scope.firstName,
+                lastName: $scope.lastName,
+                email: $scope.email,
+                phone: $scope.phone,
+                password: $scope.password,
+                address: $scope.address,
+                postalCode: $scope.postalCode,
+                city: $scope.city
+            };
+            loginService.edit(customerUpdate, currentUser.customerId).then(function (response) {
+                console.log(response.data);
+                    loginService.login(logInCredentials).then(function (response) {
+                        var user = loginService.currentUser();
+                        console.log(user);
+                        $location.path("/details");
+
+                    });
+                }
+
+            );
+            console.log(customerUpdate);
+        };
 }]);

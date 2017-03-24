@@ -7,95 +7,54 @@
             </div>
         </div>
         <div class="main-login main-center">
-            <form class="form-horizontal" method="post" action="#">
+            <form name="loginform" class="form" novalidate>
 
-                <div class="form-group">
-                    <label class="cols-sm-2 control-label">First Name</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input ng-model="firstName" type="text" class="form-control" placeholder="Enter your Name"/>
-                        </div>
-                    </div>
+                <br><h4><strong>Create a CashMoneyAccount!</strong></h4><br>
+
+                <div class="form-group" ng-class="{'has-error': loginform.firstname.$invalid && loginform.firstname.$touched}">
+                    <label for="firstname">Förnamn</label><br>
+                    <input class="form-control" type="text" id="firstname" name="firstname" ng-model="firstName" required><br>
                 </div>
 
-                <div class="form-group">
-                    <label class="cols-sm-2 control-label">Last Name</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input ng-model="lastName" type="text" class="form-control" placeholder="Enter your Name"/>
-                        </div>
-                    </div>
+                <div class="form-group" ng-class="{'has-error': loginform.lastname.$invalid && loginform.lastname.$touched}">
+                    <label for="lastname">Efternamn</label><br>
+                    <input class="form-control" type="text" id="lastname" name="lastname" ng-model="lastName" required><br>
                 </div>
 
-                <div class="form-group">
-                    <label class="cols-sm-2 control-label">Your Email</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input ng-model="email" type="text" class="form-control" placeholder="Enter your Email"/>
-                        </div>
-                    </div>
+                <div class="form-group" ng-class="{'has-error': loginform.email.$invalid && loginform.email.$touched}">
+                    <label for="email">E-post</label><br>
+                    <input class="form-control" type="email" id="email" name="email" ng-model="email" required><br>
                 </div>
 
-                <div class="form-group">
-                    <label class="cols-sm-2 control-label">Phone</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input ng-model="phone" type="text" class="form-control" placeholder="Enter your Phone Number"/>
-                        </div>
-                    </div>
+                <div class="form-group" ng-class="{'has-error': loginform.phone.$invalid && loginform.phone.$touched}">
+                    <label for="phone">Telefon</label><br>
+                    <input class="form-control" type="text" id="phone" name="phone" ng-model="phone" required><br>
                 </div>
 
-                <div class="form-group">
-                    <label class="cols-sm-2 control-label">Password</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input ng-model="password" type="text" class="form-control" placeholder="Enter your Pw"/>
-                        </div>
-                    </div>
+                <div class="form-group" ng-class="{'has-error': loginform.password.$invalid && loginform.password.$touched}">
+                    <label for="password">Lösenord</label><br>
+                    <input class="form-control" type="password" id="password" name="password" ng-model="password" required><br>
                 </div>
 
-                <div class="form-group">
-                    <label class="cols-sm-2 control-label">Address</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input ng-model="address" type="text" class="form-control" placeholder="Enter your address"/>
-                        </div>
-                    </div>
+                <div class="form-group" ng-class="{'has-error': loginform.address.$invalid && loginform.address.$touched}">
+                    <label for="address">Address</label><br>
+                    <input class="form-control" type="text" id="address" name="address" ng-model="address" required><br>
                 </div>
 
-                <div class="form-group">
-                    <label class="cols-sm-2 control-label">Postcode</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input ng-model="postcode" type="text" class="form-control" placeholder="Enter your Postcode"/>
-                        </div>
-                    </div>
+                <div class="form-group" ng-class="{'has-error': loginform.postalCode.$invalid && loginform.postalCode.$touched}">
+                    <label for="postalCode">Postnummer</label><br>
+                    <input class="form-control" type="text" id="postalCode" name="postalCode" ng-model="postalCode" required><br>
                 </div>
 
-                <div class="form-group">
-                    <label class="cols-sm-2 control-label">City</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input ng-model="city" type="text" class="form-control" placeholder="Enter your city"/>
-                        </div>
-                    </div>
+                <div class="form-group" ng-class="{'has-error': loginform.city.$invalid && loginform.city.$touched}">
+                    <label for="city">Stad</label><br>
+                    <input class="form-control" type="text" id="city" name="city" ng-model="city" required><br>
                 </div>
 
+                <a ng-disabled="loginform.$invalid" class="btn btn-info" role="button" ng-click="register()">Submit</a>
+                <a class="btn btn-info" href="/">Cancel</a>
 
-
-
-
-                <div class="form-group ">
-                    <button ng-click="register()" type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
-                </div>
+            </form>
             </form>
         </div>
     </div>
