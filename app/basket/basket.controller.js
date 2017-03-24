@@ -27,7 +27,7 @@ angular.module("basket").controller("basketController", ["$scope", "loginService
             };
             console.log(myOrder);
             basketService.sendOrder(myOrder);
-            $scope.yo = "Thank you for shopping with CMS! Your order has been placed.";
+            $scope.yo = "Thank you for shopping with CMS! Your order has been placed. You can check your order in the Account Details tab!";
             basketService.emptyCart();
             $scope.total = 0;
         }
