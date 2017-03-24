@@ -8,7 +8,10 @@ angular.module("basket").controller("basketController", ["$scope", "loginService
 
 
     $scope.checkout = function () {
-        if (loginService.isLoggedIn()){
+        if (myBasket.length == 0){
+            $scope.yo = "Put something in the basket..."
+        }
+        else if (loginService.isLoggedIn()){
             var myItems = [];
             angular.forEach(myBasket, function (product) {
                 var itemInOrder = {
@@ -23,9 +26,10 @@ angular.module("basket").controller("basketController", ["$scope", "loginService
                 products: myItems
             };
             console.log(myOrder);
-            //basketService.sendOrder(myOrder);
-            $scope.yo = "Thank you for shopping with CMS!";
+            basketService.sendOrder(myOrder);
+            $scope.yo = "Thank you for shopping with CMS! Your order has been placed.";
             basketService.emptyCart();
+            $scope.total = 0;
         }
         else{
             $scope.yo = "Please log in to place an order";

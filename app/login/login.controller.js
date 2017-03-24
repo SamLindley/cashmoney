@@ -6,7 +6,7 @@ angular.module("login").controller("loginController", ["$scope", "$location", "$
 
 
 
-    customerService.allOrders(currentUser.customerId).then(function (response) {
+   /* customerService.allOrders(currentUser.customerId).then(function (response) {
         var allOrders = response.data;
         var totalOfAllOrders = 0;
 
@@ -26,7 +26,7 @@ angular.module("login").controller("loginController", ["$scope", "$location", "$
 
         console.log(allOrders.total);
         $scope.orders = allOrders;
-    });
+    });*/
 
     $scope.login = function () {
 
