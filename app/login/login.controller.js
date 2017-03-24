@@ -22,6 +22,7 @@ angular.module("login").controller("loginController", ["$scope", "$location", "$
         });
 
         allOrders.total = totalOfAllOrders;
+        console.log(allOrders.total);
         $scope.orders = allOrders;
         console.log(response.data);
     });
