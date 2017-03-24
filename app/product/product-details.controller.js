@@ -8,7 +8,6 @@ angular.module("product").controller("productDetailsController", ["$scope","$rou
 
     productService.getProduct($routeParams.productId).then(function (response) {
         $scope.product = response.data;
-        console.log(response.data);
         product = response.data;
         if (product.unitsInStock == 0){
             isInStock = false;

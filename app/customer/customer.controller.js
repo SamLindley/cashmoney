@@ -21,9 +21,6 @@ angular.module("customer").controller("customerController", [ "$scope","loginSer
                     total = 0;
                 });
             });
-
-
-            console.log(allOrders.total);
             $scope.orders = allOrders;
         });
 
@@ -46,17 +43,12 @@ angular.module("customer").controller("customerController", [ "$scope","loginSer
                 postalCode: $scope.postalCode,
                 city: $scope.city
             };
-            loginService.edit(customerUpdate, currentUser.customerId).then(function (response) {
-                console.log(response.data);
-                    loginService.login(logInCredentials).then(function (response) {
-                        var user = loginService.currentUser();
-                        console.log(user);
+            loginService.edit(customerUpdate, currentUser.customerId).then(function () {
+                    loginService.login(logInCredentials).then(function () {
                         $location.path("/details");
-
                     });
                 }
 
             );
-            console.log(customerUpdate);
         };
 }]);
