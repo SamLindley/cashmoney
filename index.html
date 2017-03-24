@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <title>CashMoneyShop</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+    <script src="app/app.module.js"></script>
+    <script src="app/app.config.js"></script>
+    <script src="app/app.service.js"></script>
+    <script src="app/app.controller.js"></script>
+
+    <script src="app/product/product.module.js"></script>
+    <script src="app/product/product.service.js"></script>
+    <script src="app/product/product-details.controller.js"></script>
+    <script src="app/product/product-list.controller.js"></script>
+
+    <script src="app/login/login.module.js"></script>
+    <script src="app/login/login.service.js"></script>
+    <script src="app/login/login.controller.js"></script>
+    <script src="app/login/register.controller.js"></script>
+
+    <script src="app/basket/basket.module.js"></script>
+    <script src="app/basket/basket.controller.js"></script>
+    <script src="app/basket/basket.service.js"></script>
+
+    <script src="app/customer/customer.module.js"></script>
+    <script src="app/customer/customer.controller.js"></script>
+    <script src="app/customer/customer.service.js"></script>
+
+
+</head>
+<body ng-app="app">
+    <div class="container" ng-controller="loginController">
+        <div class="header clearfix">
+            <nav class="ng-show">
+                <ul class="nav nav-pills pull-right">
+                    <li><a href="/">CASH MONEY INC.</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/basket">Basket</a></li>
+                    <li><a  ng-hide="isLoggedIn()" href="/login">Log In</a></li>
+                    <li ><a ng-hide="!isLoggedIn()" ng-click="logOut()" href="">Log Out</a></li>
+                    <li><a ng-hide="isLoggedIn()" href="/register">Register</a> </li>
+                    <li><a ng-hide="!isLoggedIn()">Hello {{currentUser().firstName}}!</a> </li>
+                    <li><a ng-hide="!isLoggedIn()" href="/details">Account Details</a> </li>
+                    <!--<li><a href="#" ng-click="showLoginStatus()">Status</a> </li>-->
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+    <div ng-view></div>
+
+
+</body>
+</html>

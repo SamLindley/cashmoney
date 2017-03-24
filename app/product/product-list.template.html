@@ -1,0 +1,18 @@
+<div class="row">
+    <h1>
+        <form>
+            <input type="text" ng-model="query">
+        </form>
+        <select ng-model="categorySelected" class="input-small" ng-options="category.name for category in categories">
+            <option value="">All</option>
+        </select>
+        <h1>You selected category id: {{categorySelected.id}}</h1>
+
+    </h1>
+    <div class="col-xs-8 col-md-1">
+        <a ng-repeat="product in products | filter: {categoryId: categorySelected.id, name: query }" href="#" class="thumbnail" ng-click="productClicked(product.id)">
+            <img src= {{product.imageUrl}} alt="...">
+
+        </a>
+    </div>
+</div>

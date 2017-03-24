@@ -1,0 +1,19 @@
+{
+  "name": "cashmoneyshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bower": "^1.8.0",
+    "liteserver": "^0.3.0"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "author": "",
+  "license": "ISC"
+}

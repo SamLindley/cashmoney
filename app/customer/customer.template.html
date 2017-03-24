@@ -1,0 +1,57 @@
+
+<div>
+    <div>
+        <table class="table">
+            <tbody>
+            <tr></tr>
+            <tr>
+                <td>Account Details for:</td>
+                <td>{{currentUser().firstName}} {{currentUser().lastName}}</td>
+            </tr>
+
+
+            <tr>
+                <td scope="row">Email</td>
+                <td>{{currentUser().email}}</td>
+            </tr>
+            <tr>
+                <td scope="row">Email</td>
+                <td>{{currentUser().phone}}</td>
+            </tr>
+            <tr>
+                <td scope="row">Email</td>
+                <td>{{currentUser().address}}</td>
+            </tr>
+            <tr>
+                <td scope="row">Email</td>
+                <td>{{currentUser().email}}</td>
+            </tr>
+            <tr>
+                <td scope="row">Email</td>
+                <td>{{currentUser().email}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <a href="/editDetails">Edit Info</a>
+</div>
+<br>
+<br>
+<br>
+<br>
+<h3>Order History</h3>
+<div>
+    <div class="col-xs-8 col-md-1">
+
+        <table class="table">
+            <tr ng-repeat="order in orders" href="#" class="thumbnail" ng-click="orderClicked(order.id)">
+                <td>{{order.dateTime | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+                <td>{{order.total}}</td>
+            </tr>
+        </table>
+        <!--<a ng-repeat="order in orders" href="#" class="thumbnail" ng-click="productClicked(product.id)">-->
+
+
+        </a>
+    </div>
+</div>

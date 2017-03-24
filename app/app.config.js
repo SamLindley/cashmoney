@@ -21,6 +21,18 @@ angular.module("app").config(["$routeProvider", "$locationProvider", function ($
         templateUrl: "app/login/register.template.html",
         controller: "registerController"
     })
+    .when("/details", {
+        templateUrl: "app/customer/customer.template.html",
+        controller: "loginController"
+    })
+    .when("/editDetails", {
+        templateUrl: "app/customer/customerEdit.template.html",
+        controller: "loginController"
+    })
+    .when("/order/:orderId", {
+        templateUrl: "app/customer/customer-details.template.html",
+        controller: "orderDetailsController"
+    })
     .otherwise("/");
     $locationProvider.html5Mode(true);
 }]);

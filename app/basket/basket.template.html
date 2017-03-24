@@ -1,0 +1,18 @@
+<div>
+    <div class="col-xs-8 col-md-1">
+        <a ng-repeat="product in myBasket track by $index" href="#" class="thumbnail" ng-click="productSelected(product.id)">
+            <img src= {{product.imageUrl}} alt="...">
+            {{product.name}}<br><br>
+            Quantity: {{product.quantity}}<br><br>
+            Price: {{product.quantity * product.price}}
+
+        </a>
+
+    </div>
+    <h1>
+
+        {{yo}}
+        <a href="#" ng-click="checkout()">Checkout</a>
+        <a href="#">{{total}}</a>
+    </h1>
+</div>
