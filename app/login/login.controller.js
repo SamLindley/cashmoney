@@ -3,11 +3,12 @@ angular.module("login").controller("loginController", ["$scope", "$location", "$
     function ($scope, $location, $route, $window, loginService, customerService, productService, $q) {
 
     var currentUser = loginService.currentUser();
-    var totalOfAllOrders = 0;
+
 
 
     customerService.allOrders(currentUser.customerId).then(function (response) {
         var allOrders = response.data;
+        var totalOfAllOrders = 0;
 
         angular.forEach(allOrders, function (order) {
             var total = 0;
