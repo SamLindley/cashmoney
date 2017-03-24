@@ -3,28 +3,28 @@ angular.module("login").controller("loginController", ["$scope", "$location", "$
     function ($scope, $location, $route, $window, loginService, customerService, productService, $q) {
 
     var currentUser = loginService.currentUser();
+    var totalOfAllOrders = 0;
+
 
     customerService.allOrders(currentUser.customerId).then(function (response) {
         var allOrders = response.data;
-        var totalOfAllOrders = 0;
 
         angular.forEach(allOrders, function (order) {
             var total = 0;
             angular.forEach(order.products, function (product) {
                 productService.getProduct(product.productId).then(function (response) {
                     total += (response.data.price * product.quantity);
-                    console.log(total);
+                    totalOfAllOrders+=(response.data.price * product.quantity);
                     order.total = total;
-                    totalOfAllOrders += total;
-                })
+                    $scope.total = totalOfAllOrders;
+                });
+                total = 0;
             });
-
         });
 
-        allOrders.total = totalOfAllOrders;
+
         console.log(allOrders.total);
         $scope.orders = allOrders;
-        console.log(response.data);
     });
 
     $scope.login = function () {
